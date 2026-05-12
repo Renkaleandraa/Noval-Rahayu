@@ -79,6 +79,41 @@ ul{
 }
 
 
+.hero,
+.couple-section,
+.info-section,
+.story-section,
+.gallery-section,
+.rsvp-section,
+.disqus-section,
+.footer-section{
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 100px 0;
+
+  overflow: hidden;
+}
+
+@media(max-width:768px){
+
+  .hero,
+  .couple-section,
+  .info-section,
+  .story-section,
+  .gallery-section,
+  .rsvp-section,
+  .disqus-section{
+    min-height: 100svh;
+    padding: 80px 0;
+  }
+
+}
+
+
+
 /* =========================
    SECTION TITLE
 ========================= */
@@ -213,152 +248,437 @@ color: var(--lilac);
 
 
 /* =========================
-   HERO
+   LOADER LUXURY
 ========================= */
 
-.hero{
-  min-height: 100vh;
+.loader-wrapper{
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background:
+  linear-gradient(
+    135deg,
+    #eef2ff,
+    #f8f5ff,
+    #ffffff
+  );
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
+  z-index: 99999;
 
   overflow: hidden;
+
+  transition: opacity 1s ease,
+              visibility 1s ease;
+}
+
+.loader-wrapper.hide{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-content{
+  text-align: center;
   position: relative;
 }
 
+.loader-ring{
+  width: 90px;
+  height: 90px;
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+  border-radius: 50%;
+
+  border: 2px solid rgba(180,180,255,0.2);
+  border-top: 2px solid #a5b4fc;
+
+  margin: auto auto 30px;
+
+  animation: spin 1.2s linear infinite;
+}
+
+.loader-title{
+  font-size: 42px;
+  font-weight: 600;
+
+  color: #6b7280;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 10px;
+
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.loader-text{
+  font-size: 14px;
+  letter-spacing: 6px;
+
+  text-transform: uppercase;
+
+  color: #9ca3af;
+}
+
+@keyframes spin{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+  position: relative;
+
   width: 100%;
-  height: 100%;
-  background-image: url("images/fix\ hero.jpg");
-   background-size: cover;
-  background-position: center;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  padding: 0;
+
+  background-image:
+ linear-gradient(
+  to bottom,
+   rgba(255,255,255,0.08),
+  rgba(186, 167, 255, 0.18),
+  rgba(131, 94, 164, 0.4)
+  ),
+  url('images/fix\ hero.jpg');
+
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-  z-index: -1; 
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: -1;
-  filter: grayscale();
 }
 
+
+/* Overlay Blur */
 
 .hero-overlay{
   position: absolute;
   inset: 0;
 
-  background: linear-gradient(
-  to bottom,
-  rgba(80,70,110,0.45),
-  rgba(50,55,90,0.55)
-);
+  backdrop-filter: blur(2px);
 
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(255,255,255,0.08),
+    transparent 60%
+  );
 }
 
+
+/* Content */
 
 .hero-content{
   position: relative;
   z-index: 2;
-  color: var(--white);
 
-  max-width: 850px;
-  margin: auto;
+  text-align: center;
+
+  color: white;
+
+  padding: 20px;
 }
 
+
+/* Subtitle */
 
 .hero-subtitle{
   font-size: 15px;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   text-transform: uppercase;
-  margin-bottom: 8px;
-  color: rgba(255,255,255,0.75);
-}
 
-
-.hero-content h5{
-  font-size: 20px;
-  font-weight: 300;
   margin-bottom: 18px;
+
+  opacity: 0.9;
 }
 
 
-.hero-content h1{
-  font-family: var(--title-font);
-  font-size: 110px;
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 25px;
+/* Title */
+
+.hero-title{
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: 90px;
+  font-weight: 600;
+
+  line-height: 1.1;
+
+  margin-bottom: 20px;
 }
 
 
-.hero-description{
-  font-size: 16px;
-  color: rgba(255,255,255,0.85);
+/* Date */
+
+.hero-date{
+  font-size: 18px;
+  letter-spacing: 5px;
+
   margin-bottom: 35px;
+
+  opacity: 0.9;
+}
+
+.guest-wrapper{
+  margin: 22px 0 28px;
+}
+
+.guest-title{
+  font-size: 13px;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.72);
+
+  margin-bottom: 8px;
+}
+
+.guest-name{
+  font-size: 32px;
+  font-weight: 600;
+
+  color: #fff;
+
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Button */
+
+.hero-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 38px;
+
+  border-radius: 999px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(199,184,255,0.85),
+    rgba(168,216,255,0.85)
+  );
+
+  border:
+  1px solid rgba(255,255,255,0.18);
+
+  backdrop-filter: blur(10px);
+
+  color: #fff;
+  text-decoration: none;
+
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  transition: all 0.4s ease;
+
+  box-shadow:
+  0 10px 30px rgba(0,0,0,0.18);
+}
+
+.hero-btn:hover{
+  background:
+  rgba(255,255,255,0.08);
+
+  border:
+  1px solid rgba(255,255,255,0.25);
+
+  color: #fff;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+  0 15px 40px rgba(0,0,0,0.22);
+}
+
+.hero-btn:active{
+  transform: scale(0.96);
+
+  background:
+  rgba(255,255,255,0.05);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 768px){
+
+  .hero{
+    min-height: 100svh;
+    background-position: center;
+  }
+
+  .hero-title{
+    font-size: 56px;
+  }
+
+  .hero-date{
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+
+  .hero-btn{
+    padding: 13px 30px;
+    font-size: 14px;
+  }
+
 }
 
 
 /* =========================
    COUNTDOWN
 ========================= */
-
 .countdown-wrapper{
   display: flex;
   justify-content: center;
   gap: 18px;
   flex-wrap: wrap;
 
-  margin-bottom: 40px;
+  margin: 35px 0 45px;
 }
 
 
+/* BOX */
+
 .countdown-box{
+  position: relative;
+
   width: 110px;
   height: 110px;
 
-  border-radius: 24px;
+  border-radius: 28px;
 
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
+  background:
+  linear-gradient(
+    145deg,
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0.04)
+  );
 
-  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(16px);
+
+  border:
+  1px solid rgba(255,255,255,0.12);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  transition: var(--transition);
+  overflow: hidden;
+
+  transition: 0.4s ease;
+
+  box-shadow:
+  0 10px 35px rgba(0,0,0,0.18);
 }
 
+
+/* GLOW */
+
+.countdown-box::before{
+  content: '';
+
+  position: absolute;
+
+  width: 140px;
+  height: 140px;
+
+  background:
+  radial-gradient(
+    rgba(200,180,255,0.18),
+    transparent 70%
+  );
+
+  top: -60px;
+  right: -60px;
+}
+
+
+/* HOVER */
 
 .countdown-box:hover{
-  transform: translateY(-5px);
-  background: rgba(255,255,255,0.12);
+  transform: translateY(-6px);
+
+  background:
+  linear-gradient(
+    145deg,
+    rgba(255,255,255,0.14),
+    rgba(255,255,255,0.06)
+  );
+
+  box-shadow:
+  0 18px 45px rgba(0,0,0,0.25);
 }
 
+
+/* NUMBER */
 
 .countdown-box span{
-  font-size: 34px;
-  font-weight: 600;
+  font-size: 36px;
+  font-weight: 700;
+
   line-height: 1;
-  margin-bottom: 8px;
+
+  margin-bottom: 10px;
+
+  color: #fff;
 }
 
 
+/* TEXT */
+
 .countdown-box small{
-  font-size: 13px;
+  font-size: 11px;
+
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.75);
+
+  color: rgba(255,255,255,0.78);
+}
+
+
+/* MOBILE */
+
+@media(max-width: 768px){
+
+  .countdown-wrapper{
+    gap: 12px;
+  }
+
+  .countdown-box{
+    width: 78px;
+    height: 78px;
+
+    border-radius: 22px;
+  }
+
+  .countdown-box span{
+    font-size: 24px;
+  }
+
+  .countdown-box small{
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
 }
 
 
@@ -564,6 +884,24 @@ color: var(--lilac);
   margin-top: 24px;
 }
 
+
+.map-frame{
+  width: 100%;
+  height: 250px;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  margin-top: 20px;
+}
+
+.map-frame iframe{
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+}
 
 /* =========================
    STORY SECTION
@@ -1062,6 +1400,16 @@ linear-gradient(
   margin: 0;
 }
 
+.footer-right small{
+  display: block;
+  margin-top: 8px;
+
+  font-size: 12px;
+  letter-spacing: 2px;
+
+  color: rgba(255,255,255,0.7);
+}
+
 
 /* =========================
    MUSIC BUTTON
@@ -1114,11 +1462,6 @@ linear-gradient(
    RESPONSIVE
 ========================= */
 
-@media(max-width: 991px){
-
-  section{
-    padding: 90px 0;
-  }
 
   .navbar-collapse{
     background: rgba(0,0,0,0.95);
@@ -1164,7 +1507,7 @@ linear-gradient(
     grid-template-columns: repeat(2,1fr);
   }
 
-}
+
 
 
 @media(max-width: 768px){
@@ -1173,9 +1516,6 @@ linear-gradient(
     font-size: 42px;
   }
 
-  .hero{
-    padding: 140px 20px 100px;
-  }
 
   .hero-content h1{
     font-size: 54px;
@@ -1614,6 +1954,48 @@ section::before{
   border: 1px solid rgba(255,255,255,0.2);
 
   animation: pulseMusic 2s infinite;
+}
+
+.music-control {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 55px;
+  height: 55px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  font-size: 20px;
+
+  cursor: pointer;
+  z-index: 999;
+
+  transition: 0.3s ease;
+}
+
+.music-control:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.music-control.playing {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
 }
 
 
