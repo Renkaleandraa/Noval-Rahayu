@@ -2,10 +2,40 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <link
+rel="stylesheet"
+href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+/>
+/>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Rahayu & Noval Wedding</title>
+
+
+
+  <!-- LOADER START -->
+<div class="loader-wrapper" id="loader">
+
+  <div class="loader-content">
+
+    <div class="loader-ring"></div>
+
+    <h2 class="loader-title" id="loaderGuest">
+  Welcome Guest
+</h2>
+
+    <p class="loader-text">
+      Wedding Invitation
+    </p>
+
+  </div>
+
+</div>
+<!-- LOADER END -->
 
   <!-- BOOTSTRAP -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,11 +72,15 @@
         <li class="nav-item"><a class="nav-link" href="#info">Info</a></li>
         <li class="nav-item"><a class="nav-link" href="#story">Story</a></li>
         <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gifts">Gifts</a></li>
         <li class="nav-item"><a class="nav-link" href="#rsvp">RSVP</a></li>
-        <li class="nav-item"><a class="nav-link" href="#gift">Gift</a></li>
+        <li class="nav-item">
+  <a class="nav-link" href="#wishes">Wishes</a>
+</li>
+        
       </ul>
-
-      <a href="#info" class="hero-button desktop-button">Buka Undangan</a>
+      
+      <a href="#info" class="hero-button desktop-button">Open Invitation</a>
     </div>
 
   </div>
@@ -54,57 +88,65 @@
 
 
 <!-- HERO -->
-<section id="hero" class="hero">
+
+<section class="hero" id="hero">
 
   <div class="hero-overlay"></div>
 
-  <div class="container">
+  <div class="container hero-content" data-aos="fade-up">
+    
+    
+    <p class="hero-subtitle">
+      The Wedding Of
+    </p>
 
-    <div class="hero-content text-center">
+    <h1 class="hero-title">
+      Rahayu & Noval
+    </h1>
 
-      <p class="hero-subtitle">Kepada</p>
-      <h5>Bapak/Ibu/Saudara/i,</h5>
+    <div class="guest-wrapper">
 
-      <h1>RAHAYU & NOVAL</h1>
+  <p class="guest-title">
+    Kepada Yth.
+  </p>
 
-      <p class="hero-description">
-        Akan melangsungkan resepsi pernikahan dalam:
-      </p>
+  <h4 class="guest-name" id="guestName">
+    Nama Tamu
+  </h4>
 
+</div>
 
-      <!-- COUNTDOWN -->
-      <div class="countdown-wrapper">
+    <p class="hero-date">
+      20 • 06 • 2026
+    </p>
 
-        <div class="countdown-box">
-          <span>28</span>
-          <small>Days</small>
-        </div>
+    <div class="countdown-wrapper">
 
-        <div class="countdown-box">
-          <span>03</span>
-          <small>Hours</small>
-        </div>
-
-        <div class="countdown-box">
-          <span>19</span>
-          <small>Minutes</small>
-        </div>
-
-        <div class="countdown-box">
-          <span>45</span>
-          <small>Seconds</small>
-        </div>
-
+      <div class="countdown-box">
+        <span id="days">39</span>
+        <small>Days</small>
       </div>
 
+      <div class="countdown-box">
+        <span id="hours">00</span>
+        <small>Hours</small>
+      </div>
 
-      <a href="#couple" class="hero-button">
-        Lihat Undangan
-      </a>
+      <div class="countdown-box">
+        <span id="minutes">00</span>
+        <small>Minutes</small>
+      </div>
+
+      
 
     </div>
 
+    <a href="#couple" class="hero-btn">
+      Open Invitation
+    </a>
+
   </div>
+
 </section>
 
 
@@ -137,8 +179,15 @@
             </p>
 
             <div class="social-icons">
-              <a href="#"><i class="bi bi-instagram"></i></a>
-              <a href="#"><i class="bi bi-envelope"></i></a>
+                          <a
+href="https://instagram.com/novaladh"
+target="_blank">
+
+<i class="bi bi-instagram"></i>
+
+</a>
+              
+             
             </div>
 
           </div>
@@ -173,8 +222,14 @@
             </p>
 
             <div class="social-icons">
-              <a href="#"><i class="bi bi-instagram"></i></a>
-              <a href="#"><i class="bi bi-envelope"></i></a>
+             <a
+href="https://instagram.com/rahayuraa"
+target="_blank">
+
+<i class="bi bi-instagram"></i>
+
+</a>
+              
             </div>
 
           </div>
@@ -192,7 +247,7 @@
 <!-- INFO -->
 <section id="info" class="info-section">
   <div class="container">
-
+<div class="timeline-item" data-aos="fade-left"></div>
     <div class="section-heading text-center">
       <p>Info Acara</p>
       <h2>Wedding Event</h2>
@@ -257,10 +312,28 @@
 
           <h3>Lokasi</h3>
 
-          <p>Gedung Serbaguna</p>
-          <p>Jakarta Selatan</p>
+          <p>Aula masjid Ar-Ridho Komplek pajak, jl.Garuda Raya no 18 Jurang mangu timur Kec. Pondok Aren kota Tangerang selatan</p>
+          <p>Banten 15222</p>
 
-          <a href="#" class="info-button">Lihat Peta</a>
+          <div class="map-frame">
+
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0791096999565!2d106.73361910000001!3d-6.253307399999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f07028e44b13%3A0xf412944de0517119!2sMasjid%20Ar%20Ridho!5e0!3m2!1sen!2sid!4v1778572596175!5m2!1sen!2sid"
+allowfullscreen=""
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+</div>
+
+<a
+href="https://maps.google.com/?q=Masjid+Ar+Ridho"
+target="_blank"
+class="info-button">
+
+Buka Google Maps
+
+</a>
 
         </div>
       </div>
@@ -300,7 +373,7 @@
 
     <div class="timeline mt-5">
 
-      <div class="timeline-item">
+      <div class="timeline-item" data-aos="fade-right">
         <div class="timeline-image">
           <img src="images/first meet.jpg" alt="story">
         </div>
@@ -309,7 +382,7 @@
         <span>2019</span>
 
         <p>
-          Pertemuan pertama yang tidak kami duga.
+        Sebelumnya, kami ingin mengucapkan terima kasih kepada teman yang tidak dapat kami sebutkan satu per satu. Karena melalui perantaranya, kami dipertemukan dalam sebuah kisah yang kini membawa kami menuju perjalanan hidup bersama.
         </p>
       </div>
 
@@ -323,7 +396,8 @@
         <span>2024</span>
 
         <p>
-          Berawal dari teman menjadi tempat pulang.
+          Berawal dari sebuah coffee shop kecil di wilayah Ciledug, kami dipertemukan dan saling dikenalkan oleh seorang teman pada tahun 2019. Sejak saat itu, komunikasi mulai terjalin di antara kami. Meski di tengah perjalanan kami sempat kehilangan kabar karena kesibukan masing-masing, takdir kembali mempertemukan kami.
+
         </p>
       </div>
 
@@ -337,7 +411,7 @@
         <span>2026</span>
 
         <p>
-          Kami memutuskan melangkah lebih serius.
+          Singkat cerita, pada tahun 2023 kami kembali menjalin komunikasi yang lebih intens. Seiring berjalannya waktu, kami pun memutuskan untuk melangkah ke hubungan yang lebih serius, hingga akhirnya memilih untuk menyempurnakan perjalanan ini dalam ikatan suci pernikahan.
         </p>
       </div>
 
@@ -356,27 +430,43 @@
       <h2>Captured Moments</h2>
     </div>
 
+  
 
     <div class="gallery-grid mt-5">
 
-      <div class="gallery-item tall">
-        <img src="images/galleryy.jpg" alt="gallery">
-      </div>
+      <a
+href="images/galleryy.jpg"
+class="gallery-item tall glightbox">
 
-    
+  <img src="images/galleryy.jpg" alt="gallery">
 
-      <div class="gallery-item wide">
-        <img src="images/galleryyyy.jpg" alt="gallery">
-      </div>
+</a>
+
+<a
+href="images/galleryy.jpg"
+class="gallery-item tall glightbox">
+
+  <img src="images/galleryy.jpg" alt="gallery">
+
+</a>
+
+<a
+href="images/galleryy.jpg"
+class="gallery-item tall glightbox">
+
+  <img src="images/galleryyyy.jpg" alt="gallery">
+
+</a>
+
+     
+      
 
 
-      <div class="gallery-item wide">
-        <img src="images/galleryyyyy.jpg" alt="gallery">
-      </div>
+     
 
       
 
-    
+      
 
     </div>
 
@@ -388,8 +478,7 @@
      WEDDING GIFT
 ========================= -->
 
-<section class="gift-section">
-
+<section id="gifts" class="gift-section">
   <div class="container">
 
     <div class="section-heading text-center mb-5">
@@ -411,13 +500,14 @@
           <h3>BCA</h3>
 
           <p class="gift-number">
-            1234567890
+            3452691172
+          
           </p>
 
-          <small>a.n Rahayu</small>
+          <small>A.N NOVAL ARDIANSYAH</small>
 
           <button class="copy-button"
-            onclick="copyText('1234567890')">
+            onclick="copyText('3452691172')">
 
             Salin Nomor
 
@@ -440,13 +530,13 @@
           <h3>DANA</h3>
 
           <p class="gift-number">
-            08123456789
+            1010013860752
           </p>
 
-          <small>a.n Noval</small>
+          <small>A.N RAHAYU RAHMANINGSIH</small>
 
           <button class="copy-button"
-            onclick="copyText('08123456789')">
+            onclick="copyText('1010013860752')">
 
             Salin Nomor
 
@@ -465,13 +555,13 @@
             <i class="bi bi-wallet2"></i>
           </div>
 
-          <h3>Sending gift to</h3>
+          <h3>SENDING GIFT TO</h3>
 
           <p class="gift-textr">
             pondok maharta blok H 15 No. 5 RT 012 RW 009 Pondok Kacang Timur Pondok Aren Tangerang Selatan
           </p>
 
-          <small>a.n Rahayu</small>
+          <small>A.N RAHAYU RAHMANINGSIH</small>
 
           <button class="copy-button"
             onclick="copyText(' pondok maharta blok H 15 No. 5 RT 012 RW 009 Pondok Kacang Timur Pondok Aren Tangerang Selatan')">
@@ -509,9 +599,14 @@
             Mohon konfirmasi kehadiran Anda.
           </p>
 
-          <a href="#" class="hero-button">
-            Konfirmasi
-          </a>
+        <a
+href="https://docs.google.com/forms/d/e/1FAIpQLSdQM8iNJmh6Beu3xKSdeOPV0gKd6HD20wZiAHdyvhC0DGYNiA/viewform?usp=header"
+target="_blank"
+class="hero-button">
+
+Konfirmasi
+
+</a>
         </div>
       </div>
 
@@ -523,9 +618,14 @@
             Isi form konfirmasi dengan mudah.
           </p>
 
-          <a href="#" class="hero-button">
-            Isi Form
-          </a>
+                  <a
+href="https://docs.google.com/forms/d/e/1FAIpQLSdQM8iNJmh6Beu3xKSdeOPV0gKd6HD20wZiAHdyvhC0DGYNiA/viewform?usp=header"
+target="_blank"
+class="hero-button">
+
+Isi Konfirmasi
+
+</a>
         </div>
       </div>
 
@@ -537,9 +637,14 @@
             Lihat daftar tamu yang hadir.
           </p>
 
-          <a href="#" class="hero-button">
-            Lihat Daftar
-          </a>
+         <a
+href="https://docs.google.com/spreadsheets/d/1pMLeeCMtcsUdK8gulP-LLyN2absR41iwdE62yVA2ZP8/edit?usp=sharing"
+target="_blank"
+class="hero-button">
+
+Lihat Daftar
+
+</a>
         </div>
       </div>
 
@@ -587,17 +692,47 @@
 
 
       <div class="footer-center">
-        <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="#"><i class="bi bi-whatsapp"></i></a>
-        <a href="#"><i class="bi bi-envelope"></i></a>
-      </div>
+
+  <!-- Instagram -->
+  <a
+  href="https://instagram.com/asyiifaaftrh"
+  target="_blank">
+
+    <i class="bi bi-instagram"></i>
+
+  </a>
+
+  <!-- WhatsApp -->
+  <a
+  href="https://wa.me/6289525884754"
+  target="_blank">
+
+    <i class="bi bi-whatsapp"></i>
+
+  </a>
+
+  <!-- Email -->
+  <a
+  href="mailto:asyifaaftrh610@gmail.com">
+
+    <i class="bi bi-envelope"></i>
+
+  </a>
+
+</div>
 
 
-      <div class="footer-right">
-        <p>
-          © 2026 Rahayu & Noval Wedding
-        </p>
-      </div>
+    <div class="footer-right">
+
+  <p>
+    © 2026 Rahayu & Noval Wedding
+  </p>
+
+  <small>
+    Crafted with love by R&N
+  </small>
+
+</div>
 
     </div>
 
@@ -605,16 +740,15 @@
 </footer>
 
 
-<!-- MUSIC BUTTON -->
-<div class="music-button">
-  <i class="bi bi-disc"></i>
-</div>
-
-
-<!-- AUDIO -->
-<audio autoplay loop>
-  <source src="audio/music.mp3" type="audio/mp3">
+<!-- Wedding Music -->
+<audio id="weddingMusic" loop>
+  <source src="audio/theadamstimur.mp3" type="audio/mpeg">
 </audio>
+
+<!-- Music Button -->
+<div class="music-button">
+  <i class="bi bi-play-fill"></i>
+</div>
 
 
 <!-- BOOTSTRAP -->
@@ -628,13 +762,17 @@
    COUNTDOWN
 ========================= */
 
-const targetDate = new Date("January 20, 2026 08:00:00").getTime();
+const targetDate = new Date("June 20, 2026 08:00:00").getTime();
 
 const countdown = setInterval(function () {
 
   const now = new Date().getTime();
 
-  const distance = targetDate - now;
+ let distance = targetDate - now;
+
+if(distance < 0){
+  distance = 0;
+}
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
@@ -676,51 +814,51 @@ const countdown = setInterval(function () {
    MUSIC BUTTON
 ========================= */
 
-const audio = document.querySelector("audio");
+const audio = document.getElementById("weddingMusic");
+const button = document.querySelector(".music-button");
+const icon = document.querySelector(".music-button i");
 
-const musicButton = document.querySelector(".music-button");
+let isPlaying = false;
 
-const musicIcon = document.querySelector(".music-button i");
+audio.volume = 0.5;
 
-
-let isPlaying = true;
-
-
-/* autoplay fix mobile */
+/* start pertama kali (mobile requirement) */
 window.addEventListener("click", () => {
-
-  audio.play();
-
+  audio.play().then(() => {
+    isPlaying = true;
+      icon.classList.remove("bi-pause-fill");
+    icon.classList.add("bi-play-fill");
+    button.style.animation = "rotateMusic 5s linear infinite";
+  }).catch(() => {});
 }, { once: true });
 
+button.addEventListener("click", (e) => {
+  e.stopPropagation();
 
-musicButton.addEventListener("click", () => {
-
-  if (isPlaying) {
-
-    audio.pause();
-
-    musicIcon.classList.remove("bi-disc");
-
-    musicIcon.classList.add("bi-pause-fill");
-
-    musicButton.style.animation = "none";
-
-  } else {
-
+  if (audio.paused) {
+    // ▶ RESUME / PLAY
     audio.play();
 
-    musicIcon.classList.remove("bi-pause-fill");
+    isPlaying = true;
 
-    musicIcon.classList.add("bi-disc");
+    icon.classList.remove("bi-play-fill");
+    icon.classList.add("bi-disc");
 
-    musicButton.style.animation = "rotateMusic 5s linear infinite";
+    button.style.animation = "rotateMusic 5s linear infinite";
 
+  } else {
+    // ⏸ PAUSE
+    audio.pause();
+
+    isPlaying = false;
+
+    icon.classList.remove("bi-pause-fill");
+    icon.classList.add("bi-play-fill");
+
+    button.style.animation = "none";
   }
-
-  isPlaying = !isPlaying;
-
 });
+
 
 
 
@@ -771,8 +909,8 @@ hiddenElements.forEach((el) => {
 
 </script>
 
-<!-- DISQUS SCRIPT -->
-<div id="disqus_thread"></div>
+
+
 <script>
   
     (function() { // DON'T EDIT BELOW THIS LINE
@@ -795,6 +933,119 @@ function copyText(text){
   alert("Nomor berhasil disalin!");
 }
 </script>
+
+
+<script>
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const guest = urlParams.get('to');
+
+const guestElement = document.getElementById('guestName');
+
+
+if(guest){
+
+  guestElement.innerText =
+  decodeURIComponent(guest.replace(/\+/g, ' '));
+
+} else {
+
+  guestElement.innerText = "Bapak/Ibu/Saudara/i";
+
+}
+
+</script>
+
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+
+
+const defaultGuest = 'Bapak/Ibu/Saudara/i';
+
+if(guest){
+
+  const guestName =
+  decodeURIComponent(
+    guest.replace(/\+/g, ' ')
+  );
+
+  document.getElementById('guestName').innerText =
+  guestName;
+
+  document.getElementById('loaderGuest').innerText =
+  `Welcome, ${guestName}`;
+
+}else{
+
+  document.getElementById('guestName').innerText =
+  defaultGuest;
+
+  document.getElementById('loaderGuest').innerText =
+  `Welcome, ${defaultGuest}`;
+
+}
+
+window.addEventListener('load', () => {
+
+  const loader =
+  document.getElementById('loader');
+
+  setTimeout(() => {
+    loader.classList.add('hide');
+  }, 1800);
+
+});
+
+</script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<script>
+
+const lightbox = GLightbox({
+  touchNavigation: true,
+  loop: true,
+});
+
+</script>
+
+<script>
+AOS.init({
+  duration: 1400,
+  once: true,
+  offset: 80,
+});
+</script>
+
+<script>
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
+</script>
+
+<script>
+(function () {
+
+  var d = document,
+      s = d.createElement('script');
+
+  s.src = 'https://novalrahayu.disqus.com/embed.js';
+
+  s.setAttribute('data-timestamp', +new Date());
+
+  (d.head || d.body).appendChild(s);
+
+})();
+</script>
+
+
 
 </body>
 </html>
